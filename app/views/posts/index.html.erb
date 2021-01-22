@@ -5,7 +5,8 @@
 <% end %>
 
 <% @posts.each do |post|%>
-  <div class="post">
+  <%# カスタムデータとは、data-<情報>として属性値には文字列で情報を与えるもの %>
+  <div class="post" data-id=<%= post.id %> data-check=<%= post.checked %>>
     <div class="post-date">
       投稿日時：<%= post.created_at %>
     </div>
