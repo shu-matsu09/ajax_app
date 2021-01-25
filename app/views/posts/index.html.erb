@@ -1,8 +1,13 @@
 <h1>AjaxApp</h1>
 <%= form_with url: "/posts", method: :post,id: "form" do |form| %>
-  <%= form.text_field :content %>
+  <%# id: "content"を設定し、投稿後に入力フォームをリセットする処理をjsに記述 %>
+  <%= form.text_field :content, id: "content" %>
   <%= form.submit '投稿する', id: "submit" %>
 <% end %>
+
+<%# 投稿後にメモを追加する要素として以下を記述 %>
+<div id="list">
+</div>
 
 <% @posts.each do |post|%>
   <%# カスタムデータとは、data-<情報>として属性値には文字列で情報を与えるもの %>
